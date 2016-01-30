@@ -7,10 +7,13 @@ public class CircleLoad : MonoBehaviour {
     public int segments;
 	public float xradius;
 	public float yradius;
+	public float offsetRadius;
 
 	LineRenderer line;
-	float tickPeriod = 2;
+	float tickPeriod = 2f;
 	float angle;
+	Transform parentTrans;
+
 	bool _online;
 
 	void Start()
@@ -21,20 +24,26 @@ public class CircleLoad : MonoBehaviour {
 
 		angle = 360;
 		_online = false;
-		goOnline ();
+		parentTrans = this.transform.parent.transform;
+
+		xradius = yradius = (parentTrans.lossyScale.y / 2) + offsetRadius;
 	}
 
 
 	// Update is called once per frame
 	void Update () {
 		if (_online) {
-			angle -= Time.deltaTime * 360 / tickPeriod;
+			angle -= Time.deltaTime * (360 / tickPeriod);
 			if (angle <= 0) {
 				angle = 360;
 			}
 			drawCircle (angle);
 		}
 	}
+	public bool isOnline(){
+		return _online;
+	}
+
 	//Aloita animaatio
 	public void goOnline()	{
 		resetTicks ();

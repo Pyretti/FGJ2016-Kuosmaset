@@ -33,7 +33,7 @@ public class DancingManScript : MonoBehaviour {
 
         //Cicle loaderin alustus
         loadBar = buttonToPress.GetComponent<CircleLoad>();
-        loadBar.setTickRate((int)offsetTimer);
+        loadBar.setTickRate(1.5f);
 
         buttonToPress.SetActive(false);
     } 
@@ -43,7 +43,9 @@ public class DancingManScript : MonoBehaviour {
 
         if (timer <= 0) {
             buttonToPress.SetActive(true);
-            loadBar.goOnline();
+			if(!loadBar.isOnline()) {
+            	loadBar.goOnline();
+			}
             if (Input.GetKeyDown(btn)) {
                 btn = GetRandomButton();
                 transform.GetComponentInChildren<TextMesh>().text = btn.ToString();
