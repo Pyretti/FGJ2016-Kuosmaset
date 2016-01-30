@@ -21,7 +21,7 @@ public class BalanceManScript : MonoBehaviour {
 
 		goOnline ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (_online) {

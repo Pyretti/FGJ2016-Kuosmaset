@@ -6,6 +6,7 @@ public class DancingManScript : MonoBehaviour {
     public float defaultTimer = 1.5f;
     public float offsetTimer = 1f;
 
+
     private PlayerBase pb;
     private float timer = 2f;
     private KeyCode btn;
@@ -43,10 +44,12 @@ public class DancingManScript : MonoBehaviour {
 
         if (timer <= 0) {
             buttonToPress.SetActive(true);
+
 			if(!loadBar.isOnline()) {
             	loadBar.goOnline();
 			}
             if (Input.GetKeyDown(btn)) {
+				loadBar.goOffline();
                 btn = GetRandomButton();
                 transform.GetComponentInChildren<TextMesh>().text = btn.ToString();
                 buttonToPress.SetActive(false);
@@ -55,8 +58,8 @@ public class DancingManScript : MonoBehaviour {
         }
 
         //Kuolema
-        if(timer <= offsetTimer) {
-            //pb.playerDied();
+        if(timer < (0 + offsetTimer - 1.5f) && (loadBar.isOnline())) {
+			//TAKE DAMAGE HERE
         }
     }
 

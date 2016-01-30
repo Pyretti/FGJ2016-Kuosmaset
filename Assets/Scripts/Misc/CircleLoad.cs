@@ -35,7 +35,8 @@ public class CircleLoad : MonoBehaviour {
 		if (_online) {
 			angle -= Time.deltaTime * (360 / tickPeriod);
 			if (angle <= 0) {
-				angle = 360;
+				goOffline();
+				angle = 0;
 			}
 			drawCircle (angle);
 		}
@@ -43,7 +44,9 @@ public class CircleLoad : MonoBehaviour {
 	public bool isOnline(){
 		return _online;
 	}
-
+	public void goOffline()	{
+		this._online = false;
+	}
 	//Aloita animaatio
 	public void goOnline()	{
 		resetTicks ();

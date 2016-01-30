@@ -11,4 +11,5 @@ public class PlayerBase : MonoBehaviour {
     public bool GetAlive() {
         return alive;
     }
+
 }
