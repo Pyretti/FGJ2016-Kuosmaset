@@ -54,7 +54,7 @@ public class DancingManScript : MonoBehaviour {
 
         //Kuolema
         if(timer <= offsetTimer) {
-            //pb.playerDied();
+            //pb.TakeDmg();
         }
     }
 

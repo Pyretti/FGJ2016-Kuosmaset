@@ -1,6 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// TODO:
+/// GameManager: (Jukka)
+///     Tippuu tyypit taivaalta (Ajastimella 30 sek välein)
+/// 
+/// Animaation jahka tulee
+///     Grafiikat:
+///     - salama
+///     - linnut
+/// Äänet
+/// Intropätkä
+/// EndScreen (Jouko)
+/// EndGame (Pyry)
+/// Hifistelee jos kerkee
+///     -Pause
+/// </summary>
 public class GameManager : MonoBehaviour {
     public PlayerBase[] playerBases;
     public GameObject[] playerScripts;
