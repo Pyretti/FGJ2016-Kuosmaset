@@ -33,7 +33,7 @@ public class DancingManScript : MonoBehaviour {
 
         //Cicle loaderin alustus
         loadBar = buttonToPress.GetComponent<CircleLoad>();
-        loadBar.setTickRate((int)offsetTimer);
+        loadBar.setTickRate(1.5f);
 
         buttonToPress.SetActive(false);
     } 
@@ -54,7 +54,7 @@ public class DancingManScript : MonoBehaviour {
 
         //Kuolema
         if(timer <= offsetTimer) {
-            //pb.playerDied();
+            //pb.TakeDmg();
         }
     }
 
